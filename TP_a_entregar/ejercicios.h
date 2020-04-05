@@ -16,26 +16,44 @@ void ejercicio1(Producto *prod)
     }
     else
     {
-        cout<<"Sin espacio para cargar producto nuevo. Elimine o modifique uno existente."<<endl;
+        cout<<"\nSin espacio para cargar producto nuevo. Elimine o modifique uno existente."<<endl;
     };
 }
 
 
-void ejercicio2()
+void ejercicio2(Producto *prod)
 {
+    unsigned int ID;
+    cout<<"Ingrese el ID de producto a editar: ";
+    cin>>ID;
+    int existe = index_compara_ID(ID,prod);
 
-
-
-
+    if(existe==-1)
+    {
+        cout<<"El producto no existe."<<endl;
+    }
+    else
+    {
+        editar_producto(existe, prod);
+    }
 }
 
 
-void ejercicio3()
+void ejercicio3(Producto *prod)
 {
+    unsigned int ID;
+    cout<<"Ingrese el ID de producto a listar: ";
+    cin>>ID;
+    int existe = index_compara_ID(ID,prod);
 
-
-
-
+    if(existe==-1)
+    {
+        cout<<"El producto no existe."<<endl;
+    }
+    else
+    {
+        listar_producto(prod[existe]);
+    }
 }
 
 

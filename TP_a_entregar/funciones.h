@@ -1,21 +1,35 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
-#include "producto.h"
+
+
+
+struct Producto
+{
+    unsigned int ID;
+    char Nombre[31];
+    float Precio;
+    unsigned int Stock;
+    unsigned int StockMin;
+};
+
+const int cant_prod=2;
+
 
 int index_vacio(struct Producto *);
-bool compara_ID(int ,struct Producto *);
+int index_compara_ID(int ,struct Producto *);
 
 
-bool compara_ID(unsigned int ID,struct Producto *prod)
+int index_compara_ID(unsigned int ID,struct Producto *prod)
 {
-    bool existe=false;
+    int existe=-1;
     for(int i=0;i<cant_prod;i++)
     {
         if(prod[i].Precio != 0)
         {
             if(prod[i].ID == ID)
             {
-                existe=true;
+                existe=i;
+                break;
             }
         }
         else

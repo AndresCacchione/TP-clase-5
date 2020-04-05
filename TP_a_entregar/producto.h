@@ -2,19 +2,37 @@
 #define PRODUCTO_H_INCLUDED
 #include "funciones.h"
 
-struct Producto
-{
-    unsigned int ID;
-    char Nombre[31];
-    float Precio;
-    unsigned int Stock;
-    unsigned int StockMin;
-};
-
-const int cant_prod=2;
-
 int menuProducto(int *);
 void cargar_producto(struct Producto *, Producto *);
+void editar_producto(int, struct Producto *);
+void listar_producto(struct Producto);
+
+
+void listar_producto(struct Producto prod)
+{
+    cout<<"El nombre del producto es: " << prod.Nombre<< endl;
+    cout<<"El precio del producto es: " << prod.Precio<< endl;
+    cout<<"El stock del producto es: " << prod.Stock<< endl;
+    cout<<"El stock mínimo del producto es: " << prod.StockMin<< endl;
+}
+
+
+
+void editar_producto(int index, Producto *prod)
+{
+    cin.ignore();
+    cout<<"Ingrese el nombre del producto: ";
+    cin.getline(prod[index].Nombre,30);
+
+    cout<<"Ingrese el precio del producto: ";
+    cin>>prod[index].Precio;
+
+    cout<<"Ingrese el stock del producto: ";
+    cin>>prod[index].Stock;
+
+    cout<<"Ingrese el stock mínimo del producto: ";
+    cin>>prod[index].StockMin;
+}
 
 
 void cargar_producto(struct Producto *prod, Producto *produ)
@@ -24,11 +42,11 @@ void cargar_producto(struct Producto *prod, Producto *produ)
     cout<<"Ingrese el ID del producto: ";
     cin>>(*prod).ID;
 
-    bool existe = compara_ID((*prod).ID,produ);
+    int existe = index_compara_ID((*prod).ID,produ);
 
-    if(existe=true)
+    if(existe!=-1)
     {
-        cout<<"ID de producto duplicado."<< endl;
+        cout<<"\nID de producto duplicado."<< endl;
         cout<<"¿Intenta nuevamente?"<<endl;
         cout<<"*     1 = SI     *"<<endl;
         cout<<"*     0 = NO     *"<<endl;
@@ -41,6 +59,7 @@ void cargar_producto(struct Producto *prod, Producto *produ)
         {
             return;
         }
+        cout<<endl;
     }
     else
     {
@@ -81,11 +100,5 @@ int menuProducto(int *op)
     cls();
 return *op;
 }
-
-
-
-
-
-
 
 #endif // PRODUCTO_H_INCLUDED

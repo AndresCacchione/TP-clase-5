@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1586109473 source:c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\main.cpp
+1586118954 source:c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\main.cpp
 	<iostream>
 	<clocale>
 	<cstdlib>
@@ -24,11 +24,11 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1586111470 c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\producto.h
+1586119295 c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\producto.h
 	"funciones.h"
 
-1586111587 c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\funciones.h
-	"producto.h"
+1586118050 c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\funciones.h
 
-1586109863 c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\ejercicios.h
+1586119352 c:\users\andres\documents\github\tp-clase-5\tp_a_entregar\ejercicios.h
+	"producto.h"
 

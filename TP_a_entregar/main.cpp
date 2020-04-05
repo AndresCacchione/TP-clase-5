@@ -6,9 +6,9 @@ using namespace std;
 #include <cstring>
 #include "rlutil.h"
 using namespace rlutil;
-#include "ejercicios.h"
 #include "producto.h"
 #include "funciones.h"
+#include "ejercicios.h"
 
 int main()
 {
@@ -27,11 +27,11 @@ int main()
             }break;
         case 2:
             {
-                //ejercicio2(prod);
+                ejercicio2(prod);
             }break;
         case 3:
             {
-                //ejercicio3(prod);
+                ejercicio3(prod);
             }break;
         case 4:
             {
