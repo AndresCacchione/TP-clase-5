@@ -35,7 +35,7 @@ int main()
             }break;
         case 4:
             {
-                //ejercicio4(prod);
+                ejercicio4(prod);
             }break;
         case 0:
             {

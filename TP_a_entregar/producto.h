@@ -2,10 +2,31 @@
 #define PRODUCTO_H_INCLUDED
 #include "funciones.h"
 
+//Prototipos de funciones
 int menuProducto(int *);
 void cargar_producto(struct Producto *, Producto *);
 void editar_producto(int, struct Producto *);
 void listar_producto(struct Producto);
+void listar_all_products(Producto *, int);
+
+
+void listar_all_products(Producto *prod, int ind_max)
+{
+    saveDefaultColor();
+    setColor(LIGHTGREEN);
+    cout<<"\t\tPRODUCTOS CARGADOS"<< endl<< endl;
+    cout<<"ID\tNombre\tPrecio\tStock\tStock Mínimo"<<endl;
+
+    for(int i=0;i<ind_max;i++)
+    {
+        cout<< prod[i].ID<<        "\t";
+        cout<< prod[i].Nombre<<    "\t";
+        cout<< prod[i].Precio<<    "\t";
+        cout<< prod[i].Stock<<     "\t";
+        cout<< prod[i].StockMin<<  "\t"<<endl;
+    }
+    resetColor();
+}
 
 
 void listar_producto(struct Producto prod)
@@ -15,7 +36,6 @@ void listar_producto(struct Producto prod)
     cout<<"El stock del producto es: " << prod.Stock<< endl;
     cout<<"El stock mínimo del producto es: " << prod.StockMin<< endl;
 }
-
 
 
 void editar_producto(int index, Producto *prod)

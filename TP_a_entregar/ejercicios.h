@@ -57,12 +57,16 @@ void ejercicio3(Producto *prod)
 }
 
 
-void ejercicio4()
+void ejercicio4(Producto *prod)
 {
+    int ind = index_vacio(prod);
+    if(ind==-1)
+    {
+        ind=cant_prod-1;
+    }
+    sort_by_precio(prod,ind);
 
-
-
-
+    listar_all_products(prod,ind);
 }
 
 #endif // EJERCICIOS_H_INCLUDED
