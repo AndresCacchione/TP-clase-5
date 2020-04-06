@@ -13,7 +13,7 @@ struct Producto
 };
 
 //Constante para modificar la cantidad de productos que admite el programa
-const int cant_prod=3;
+const int cant_prod=10;
 
 
 //Prototipos de funciones
